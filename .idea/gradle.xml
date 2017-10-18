@@ -9,7 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/stepview" />
+            <option value="$PROJECT_DIR$/timelineview" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

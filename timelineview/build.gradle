@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
 
 android {
     compileSdkVersion 26
@@ -20,6 +21,9 @@ android {
         }
     }
 }
+
+group = 'com.github.po10cio'
+version = '1.0'
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
