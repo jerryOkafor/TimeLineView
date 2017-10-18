@@ -2,4 +2,5 @@
 <resources>
     <color name="bg">#DAA520</color>
     <color name="gray">#eee</color>
+    <color name="dark_grey">#b1b0b0</color>
 </resources>

@@ -1,6 +1,7 @@
 package me.jerryhanks.stepview;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
@@ -11,6 +12,12 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import me.jerryhanks.stepview.model.TimeLine;
+
 /**
  * @author <@Po10cio> on 10/17/17 for StepViewApp
  *         <p>
@@ -19,6 +26,7 @@ import android.widget.RelativeLayout;
 
 public class VerticalStepView extends RelativeLayout {
     private RecyclerView recyclerView;
+    private IndicatorAdapter indicatorAdapter;
 
     public VerticalStepView(Context context) {
         super(context);
@@ -40,20 +48,32 @@ public class VerticalStepView extends RelativeLayout {
         inflate(getContext(), R.layout.vertical_step_view, this);
         this.recyclerView = findViewById(R.id.recycler);
         this.recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-        this.recyclerView.setAdapter(new IndicatorAdapter());
+        this.indicatorAdapter = new IndicatorAdapter(Collections.emptyList(), getContext());
+        this.recyclerView.setAdapter(indicatorAdapter);
 
+    }
+
+    public void setTimeLines(List<? extends TimeLine> timeLines) {
+        this.indicatorAdapter.swapItems(timeLines);
     }
 }
 
 
 class IndicatorHolder extends RecyclerView.ViewHolder {
 
-    FrameLayout container;
+    final View topLineIndicator;
+    final View dotIndicator;
+    final View bottomLineIndicator;
+    final FrameLayout container;
     private Context context;
+
 
     IndicatorHolder(View itemView) {
         super(itemView);
         this.container = itemView.findViewById(R.id.content);
+        this.topLineIndicator = itemView.findViewById(R.id.line_indicator_top);
+        this.dotIndicator = itemView.findViewById(R.id.dot_indicator);
+        this.bottomLineIndicator = itemView.findViewById(R.id.line_indicator_bottom);
 
     }
 
@@ -66,7 +86,15 @@ class IndicatorHolder extends RecyclerView.ViewHolder {
     }
 }
 
-class IndicatorAdapter extends RecyclerView.Adapter<IndicatorHolder> {
+class IndicatorAdapter<T extends TimeLine> extends RecyclerView.Adapter<IndicatorHolder> {
+
+    private List<T> timeLines = new ArrayList<>();
+    private Context context;
+
+    IndicatorAdapter(List<T> timeLines, Context context) {
+        this.timeLines = timeLines;
+        this.context = context;
+    }
 
     @Override
     public IndicatorHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -79,6 +107,35 @@ class IndicatorAdapter extends RecyclerView.Adapter<IndicatorHolder> {
 
     @Override
     public void onBindViewHolder(IndicatorHolder holder, int position) {
+        T prevTimeline = position > 0 ? timeLines.get(position - 1) : null;
+        if (prevTimeline != null) {
+            switch (prevTimeline.getStatus()) {
+                case COMPLETED:
+                    holder.topLineIndicator.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.box_enabled));
+                    break;
+                case UN_COMPLETED:
+                case ATTENTION:
+                    holder.topLineIndicator.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.box_disabled));
+                    break;
+            }
+
+        }
+        T timeLine = timeLines.get(position);
+        switch (timeLine.getStatus()) {
+            case COMPLETED:
+                break;
+            case UN_COMPLETED:
+            case ATTENTION:
+                holder.dotIndicator.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.dot_disabled));
+                holder.bottomLineIndicator.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.box_disabled));
+                break;
+        }
+        if (position == 0) {
+            holder.topLineIndicator.setVisibility(View.INVISIBLE);
+        }
+        if (position == getItemCount() - 1) {
+            holder.bottomLineIndicator.setVisibility(View.INVISIBLE);
+        }
         View view = LayoutInflater.from(holder.getContext()).inflate(R.layout.sample_time_line, holder.container, false);
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         view.setLayoutParams(params);
@@ -90,6 +147,15 @@ class IndicatorAdapter extends RecyclerView.Adapter<IndicatorHolder> {
 
     @Override
     public int getItemCount() {
-        return 5;
+        return this.timeLines.size();
+    }
+
+    public void swapItems(List<T> timeLines) {
+        this.timeLines = timeLines;
+        notifyDataSetChanged();
+    }
+
+    public Context getContext() {
+        return context;
     }
 }
