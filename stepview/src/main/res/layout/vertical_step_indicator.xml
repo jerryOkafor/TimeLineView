@@ -45,6 +45,7 @@
         android:paddingBottom="4dp"
         android:paddingTop="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toRightOf="@+id/line_indicator_bottom"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/dot_indicator"
