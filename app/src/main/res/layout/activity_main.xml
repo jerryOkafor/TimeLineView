@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="me.jerryhanks.stepviewapp.MainActivity">
 
-    <me.jerryhanks.stepview.VerticalStepView
+    <me.jerryhanks.stepview.TimeLineView
         android:id="@+id/timeline_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -19,6 +19,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-    </me.jerryhanks.stepview.VerticalStepView>
+    </me.jerryhanks.stepview.TimeLineView>
 
 </android.support.constraint.ConstraintLayout>

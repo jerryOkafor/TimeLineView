@@ -11,13 +11,13 @@
         android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="This is a sample title"
+        android:text="@string/this_is_a_sample_title"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
     <TextView
         android:id="@+id/tv_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="This is a sample sub title or content"
+        android:text="@string/this_is_a_sample_sub_title_or_content"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
 </LinearLayout>

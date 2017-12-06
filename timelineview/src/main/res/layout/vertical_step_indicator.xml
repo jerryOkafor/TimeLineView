@@ -30,6 +30,7 @@
         android:layout_width="2dp"
         android:layout_height="0dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:background="@drawable/state_box"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
