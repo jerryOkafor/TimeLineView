@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TimeLineView.iml" filepath="$PROJECT_DIR$/TimeLineView.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/timelineview/stepview.iml" filepath="$PROJECT_DIR$/timelineview/stepview.iml" />
       <module fileurl="file://$PROJECT_DIR$/timelineview/timelineview.iml" filepath="$PROJECT_DIR$/timelineview/timelineview.iml" />
     </modules>
   </component>

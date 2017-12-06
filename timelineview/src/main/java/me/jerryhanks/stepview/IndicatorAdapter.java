@@ -29,7 +29,7 @@ public class IndicatorAdapter<T extends TimeLine> extends RecyclerView.Adapter<I
 
     @Override
     public IndicatorHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.vertical_step_indicator, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.timeline_indicator, parent, false);
 
         IndicatorHolder holder = new IndicatorHolder(view);
         holder.setContext(parent.getContext());
