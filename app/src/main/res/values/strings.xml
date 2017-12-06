@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">StepViewApp</string>
+    <string name="title_1">1914</string>
+    <string name="title_2">1915</string>
+    <string name="title_3">1916</string>
+    <string name="title_4">1917</string>
+    <string name="title_5">1918</string>
+    <string name="title_6">1919</string>
+    <string name="content_1">Assassination of Archduke Franz Ferdinand of Austria, heir to the
+        Austro-Hungarian throne, who was killed in Sarajevo along with his wife Duchess Sophie by Bosnian\n\nGermany declares war on France.[11] Belgium denies permission for German forces to pass through to the French border
+    </string>
+
+    <string name="content_2">
+        First Zeppelin raid on Great Britain. Italy declares war on Australia-Hungary\n\nKosovo Offensive, a phase of the Central Powers invasion of Serbia, Serbians
+        pushed into Albania.</string>
+
+    <string name="content_3">
+        The Gallipoli Campaign ends in an Allied defeat and an Ottoman victory.\n\nBattle of Doberdo, part of the Sixth Battle of Isonzo.\n\nAllies capture Yanbu. Grigori Rasputin, Russia's éminence grise, is assassinated.
+    </string>
+
+    <string name="content_4">
+        British raid the Ancre. France: Paul Painlevé is replaced by Georges Clemenceau as Prime Minister.\n\nArmistice between Russia and the Central Powers, to take effect on December 17.
+    </string>
+
+    <string name="content_5">
+        Woodrow Wilson outlines his Fourteen Points. Operation Faustschlag, last offensive on Eastern Front.\n\nYugoslav independence proclaimed.
+    </string>
+
+    <string name="content_6">
+        Fakhri Pasha surrenders at Medina. Treaty of Versailles between the Allies and Germany: the Peace Conference opens in Paris\n\nThe United Kingdom ratifies the Treaty of Versailles
+    </string>
 </resources>
