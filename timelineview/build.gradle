@@ -1,13 +1,14 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 apply plugin: 'com.github.dcendents.android-maven'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
     buildToolsVersion "26.0.2"
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
 
@@ -35,4 +36,8 @@ dependencies {
     compile "com.android.support:appcompat-v7:$support_version"
     compile "com.android.support:recyclerview-v7:$support_version"
     compile "com.android.support.constraint:constraint-layout:$constraint_layout_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }
