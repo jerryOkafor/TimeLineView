@@ -7,15 +7,14 @@ Android Timeline View Library demonstrate the the power of ConstraintnLayout and
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/po10cio/TimeLineView/blob/master/LICENSE.md) 
 
 
-##Showcase
-
+## Showcase
 
 <img src="sc/sc1.png" alt="ExampleMain" width="240">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="sc/sc2.png" alt="ExampleMain" width="240">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="sc/sc3.png" alt="ExampleMain" width="240">
 
 
-##Quick Setup
+## Quick Setup
 ### 1. Include library
 
 **Using Gradle**
