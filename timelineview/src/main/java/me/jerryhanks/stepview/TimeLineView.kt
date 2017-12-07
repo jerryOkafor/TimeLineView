@@ -34,6 +34,7 @@ class TimeLineView : RelativeLayout {
     private fun init() {
         View.inflate(context, R.layout.timeline_view, this)
         recyclerView = findViewById(R.id.recycler)
+        recyclerView.isNestedScrollingEnabled = true
         recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
     }
 

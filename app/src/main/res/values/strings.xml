@@ -29,4 +29,20 @@
     <string name="content_6">
         Fakhri Pasha surrenders at Medina. Treaty of Versailles between the Allies and Germany: the Peace Conference opens in Paris\n\nThe United Kingdom ratifies the Treaty of Versailles
     </string>
+
+    <string name="s_title_1">UnAssigned</string>
+    <string name="s_title_2">Assigned</string>
+    <string name="s_title_3">Acknowledged</string>
+    <string name="s_title_4">Arrived Pickup</string>
+    <string name="s_title_5">Pickup</string>
+    <string name="s_title_6">Arrived Delivery</string>
+    <string name="s_title_7">Delivered</string>
+    <string name="s_content_1">Oct 30, 2017 @ 3:30 PM</string>
+    <string name="s_content_2">Oct 30, 2017 @ 3:33 PM</string>
+    <string name="s_content_3">Oct 30, 2017 @ 3:35 PM</string>
+    <string name="s_content_4">Oct 30, 2017 @ 3:40 PM</string>
+    <string name="s_content_5">Oct 30, 2017 @ 3:50 PM</string>
+    <string name="s_content_6">Oct 30, 2017 @ 4:30 PM</string>
+    <string name="timeline_of_world_war_i">Timeline of World War I</string>
+    <string name="delivery_status">Delivery Statuses</string>
 </resources>
