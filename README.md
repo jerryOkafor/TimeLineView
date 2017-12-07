@@ -161,7 +161,7 @@ This extends RecyclerView.Adapter and exposes the following functions:
 
 - Update a single item given the index
 ```kotlin
-  fun updatItem(timeline: T, position: Int) 
+  fun updateItem(timeline: T, position: Int) 
 ```
 
 - Adds a list of items to the list
