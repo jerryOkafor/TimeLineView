@@ -35,7 +35,7 @@ Then add the following line
 
 ``` gradle
 dependencies {
-    compile 'com.github.po10cio:TimeLineView:1.0.0'
+    compile 'com.github.po10cio:TimeLineView:1.0.1'
 }
 ```
 
@@ -57,7 +57,7 @@ Then add the dependency
 <dependency>
 	<groupId>com.github.po10cio</groupId>
 	<artifactId>TimeLineView</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 </dependency>
 ```
 
@@ -83,17 +83,34 @@ Then in your kotlin code, do the following:
 class MyTimeLine(status: Status, var title: String?, var content: String?) : TimeLine(status) {
 
 
-    override fun equals(o: Any?): Boolean {
-        if (this === o) return true
-        if (o !is MyTimeLine) return false
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
 
-        val that = o as MyTimeLine?
+        other as MyTimeLine
 
-        if (if (title != null) title != that!!.title else that!!.title != null) return false
-        return if (content != null) content == that.content else that.content == null
+        if (title != other.title) return false
+        if (content != other.content) return false
+
+        return true
     }
+
+
+    override fun hashCode(): Int {
+        var result = if (title != null) title!!.hashCode() else 0
+        result = 31 * result + if (content != null) content!!.hashCode() else 0
+        return result
     }
 
+    override fun toString(): String {
+        return "MyTimeLine{" +
+                "title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                '}'
+    }
+
+
+}
 ```
   
   
@@ -108,36 +125,38 @@ You can choose from any of the  statuses depending on the status of the itme you
 **Create an Array of your Timelines**
 
 ```kotlin
-val timeLines = ArrayList<MyTimeLine>()
-        timeLines.add(MyTimeLine(Status.COMPLETED, getString(R.string.title_1), getString(R.string.content_1)))
-        timeLines.add(MyTimeLine(Status.UN_COMPLETED, getString(R.string.title_2), getString(R.string.content_2)))
-        timeLines.add(MyTimeLine(Status.COMPLETED, getString(R.string.title_3), getString(R.string.content_3)))
-        timeLines.add(MyTimeLine(Status.COMPLETED, getString(R.string.title_4), getString(R.string.content_4)))
-        timeLines.add(MyTimeLine(Status.ATTENTION, getString(R.string.title_5), getString(R.string.content_5)))
-        timeLines.add(MyTimeLine(Status.COMPLETED, getString(R.string.title_6), getString(R.string.content_6)))
+ val timeLines = mutableListOf<MyTimeLine>()
+                .apply {
+                    add(MyTimeLine(Status.COMPLETED, getString(R.string.s_title_1), getString(R.string.s_content_1)))
+                    add(MyTimeLine(Status.COMPLETED, getString(R.string.s_title_2), getString(R.string.s_content_2)))
+                    add(MyTimeLine(Status.COMPLETED, getString(R.string.s_title_3), getString(R.string.s_content_3)))
+                    add(MyTimeLine(Status.COMPLETED, getString(R.string.s_title_4), getString(R.string.s_content_4)))
+                    add(MyTimeLine(Status.COMPLETED, getString(R.string.s_title_5), getString(R.string.s_content_5)))
+                    add(MyTimeLine(Status.COMPLETED, getString(R.string.s_title_6), getString(R.string.s_content_6)))
+                    add(MyTimeLine(Status.COMPLETED, getString(R.string.s_title_7), getString(R.string.s_content_7)))
+
+                }
+
 
 ```
 
 **Create the IndicatorAdapter and add it to the TimelineView**
 
 ```kotlin
-val adapter = IndicatorAdapter(timeLines, this, object : TimeLineViewCallback<MyTimeLine> {
+ val adapter = IndicatorAdapter(mutableListOf(), this, object : TimeLineViewCallback<MyTimeLine> {
             override fun onBindView(model: MyTimeLine, container: FrameLayout, position: Int): View {
                 val view = layoutInflater
                         .inflate(R.layout.sample_time_line,
                                 container, false)
+
                 (view.findViewById<TextView>(R.id.tv_title)).text = model.title
                 (view.findViewById<TextView>(R.id.tv_content)).text = model.content
-
-//Note, you can set your onclick listeners
-//and do other manipulations here
 
                 return view
             }
         })
         timelineView.setIndicatorAdapter(adapter)
         adapter.swapItems(timeLines)
-
 ```
 **IndicatorAdapter**
 This extends RecyclerView.Adapter and exposes the following functions:
