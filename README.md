@@ -60,7 +60,7 @@ Then add the dependency
 </dependency>
 ```
 
-###2. Usage
+### 2. Usage
 In your XML layout include the TimelineView as follows:
 
 ```xml
@@ -176,4 +176,4 @@ See the [changelog](/CHANGELOG.md) file.
 
 ## License
 
-Time is distributed under the MIT license. [See LICENSE](https://github.com/po10cio/TimeLineView/blob/master/LICENSE.md) for details.
+TimeLineView is distributed under the MIT license. [See LICENSE](https://github.com/po10cio/TimeLineView/blob/master/LICENSE.md) for details.
