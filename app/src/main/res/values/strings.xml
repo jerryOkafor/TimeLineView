@@ -30,19 +30,56 @@
         Fakhri Pasha surrenders at Medina. Treaty of Versailles between the Allies and Germany: the Peace Conference opens in Paris\n\nThe United Kingdom ratifies the Treaty of Versailles
     </string>
 
-    <string name="s_title_1">UnAssigned</string>
-    <string name="s_title_2">Assigned</string>
-    <string name="s_title_3">Acknowledged</string>
-    <string name="s_title_4">Arrived Pickup</string>
-    <string name="s_title_5">Pickup</string>
-    <string name="s_title_6">Arrived Delivery</string>
-    <string name="s_title_7">Delivered</string>
-    <string name="s_content_1">Oct 30, 2017 @ 3:30 PM</string>
-    <string name="s_content_2">Oct 30, 2017 @ 3:33 PM</string>
-    <string name="s_content_3">Oct 30, 2017 @ 3:35 PM</string>
-    <string name="s_content_4">Oct 30, 2017 @ 3:40 PM</string>
-    <string name="s_content_5">Oct 30, 2017 @ 3:50 PM</string>
-    <string name="s_content_6">Oct 30, 2017 @ 4:30 PM</string>
+    <!--<string name="s_title_1">UnAssigned</string>-->
+    <!--<string name="s_title_2">Assigned</string>-->
+    <!--<string name="s_title_3">Acknowledged</string>-->
+    <!--<string name="s_title_4">Arrived Pickup</string>-->
+    <!--<string name="s_title_5">Pickup</string>-->
+    <!--<string name="s_title_6">Arrived Delivery</string>-->
+    <!--<string name="s_title_7">Delivered</string>-->
+    <!--<string name="s_content_1">Oct 30, 2017 @ 3:30 PM</string>-->
+    <!--<string name="s_content_2">Oct 30, 2017 @ 3:33 PM</string>-->
+    <!--<string name="s_content_3">Oct 30, 2017 @ 3:35 PM</string>-->
+    <!--<string name="s_content_4">Oct 30, 2017 @ 3:40 PM</string>-->
+    <!--<string name="s_content_5">Oct 30, 2017 @ 3:50 PM</string>-->
+    <!--<string name="s_content_6">Oct 30, 2017 @ 4:30 PM</string>-->
+    <!--<string name="timeline_of_world_war_i">Timeline of World War I</string>-->
+    <!--<string name="delivery_status">Delivery Statuses</string>-->
+
+
+    <string name="s_title_1">STEP 1</string>
+    <string name="s_title_2">STEP 2</string>
+    <string name="s_title_3">STEP 3</string>
+    <string name="s_title_4">Step 4</string>
+    <string name="s_title_5">STEP 5</string>
+    <string name="s_title_6">STEP 6</string>
+    <string name="s_title_7">STEP 7</string>
+
+    <string name="s_content_1">Orientation\nPrio to the beginning of the year.</string>
+    <string name="s_content_2">Self-Assessment Goal setting\nPrio to the Goal Setting Conference</string>
+    <string name="s_content_3">Beginning of the year Conference\nBy The end of september</string>
+    <string name="s_content_4">School Site Visits/Informal Assessment\nOngoing</string>
+    <string name="s_content_5">Mid-Year conference\nPrio to the end of the school year.</string>
+    <string name="s_content_6">Identify and collect Artifacts and Evidence\nAt or new the end of the school year</string>
+    <string name="s_content_7">End of the Year conference and Settings\nEnd of the School Year once all performance has been received and analysed</string>
     <string name="timeline_of_world_war_i">Timeline of World War I</string>
-    <string name="delivery_status">Delivery Statuses</string>
+    <string name="delivery_status">Steps!!</string>
+
+
+    <!--<string name="s_title_1">1958</string>-->
+    <!--<string name="s_title_2">1971</string>-->
+    <!--<string name="s_title_3">1980</string>-->
+    <!--<string name="s_title_4">1982</string>-->
+    <!--<string name="s_title_5">1990</string>-->
+    <!--<string name="s_title_6">1991</string>-->
+    <!--<string name="s_title_7">1993</string>-->
+
+    <!--<string name="s_content_1">American Century founded</string>-->
+    <!--<string name="s_content_2">U.S Growth Equity Inception</string>-->
+    <!--<string name="s_content_3">U.S Fixed Income inception</string>-->
+    <!--<string name="s_content_4">First Institution client</string>-->
+    <!--<string name="s_content_5">U.S Core Equity inception</string>-->
+    <!--<string name="s_content_6">International Equity Inception</string>-->
+    <!--<string name="s_content_7">U.S Value Equity Inception</string>-->
+    <!--<string name="delivery_status">US Equity</string>-->
 </resources>

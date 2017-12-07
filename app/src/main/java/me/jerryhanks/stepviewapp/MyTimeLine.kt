@@ -7,18 +7,21 @@ import me.jerryhanks.stepview.model.TimeLine
  * @author <@Po10cio> on 10/18/17 for StepViewApp
  */
 
-class MyTimeLine(status: Status, var title: String?, var content: String?) : TimeLine(status) {
+ class MyTimeLine(status: Status, var title: String?, var content: String?) : TimeLine(status) {
 
 
-    override fun equals(o: Any?): Boolean {
-        if (this === o) return true
-        if (o !is MyTimeLine) return false
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
 
-        val that = o as MyTimeLine?
+        other as MyTimeLine
 
-        if (if (title != null) title != that!!.title else that!!.title != null) return false
-        return if (content != null) content == that.content else that.content == null
+        if (title != other.title) return false
+        if (content != other.content) return false
+
+        return true
     }
+
 
     override fun hashCode(): Int {
         var result = if (title != null) title!!.hashCode() else 0
@@ -32,4 +35,6 @@ class MyTimeLine(status: Status, var title: String?, var content: String?) : Tim
                 ", content='" + content + '\'' +
                 '}'
     }
+
+
 }

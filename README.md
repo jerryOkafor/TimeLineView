@@ -5,13 +5,14 @@ Android Timeline View Library demonstrate the the power of ConstraintnLayout and
 
 [![](https://jitpack.io/v/po10cio/TimeLineView.svg)](https://jitpack.io/#po10cio/TimeLineView)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/po10cio/TimeLineView/blob/master/LICENSE.md) 
- 
+
 
 ##Showcase
 
 
 <img src="sc/sc1.png" alt="ExampleMain" width="240">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="sc/sc2.png" alt="ExampleMain" width="240">
+<img src="sc/sc2.png" alt="ExampleMain" width="240">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="sc/sc3.png" alt="ExampleMain" width="240">
 
 
 ##Quick Setup
@@ -48,16 +49,16 @@ Also add the following lines before adding the maven dependency
 		    <id>jitpack.io</id>
 		    <url>https://jitpack.io</url>
 		</repository>
-	</repositories>
+</repositories>
 ```
 Then add the dependency
 
 ``` maven
 <dependency>
-	    <groupId>com.github.po10cio</groupId>
-	    <artifactId>TimeLineView</artifactId>
-	    <version>1.0.0</version>
-	</dependency>
+	<groupId>com.github.po10cio</groupId>
+	<artifactId>TimeLineView</artifactId>
+	<version>1.0.0</version>
+</dependency>
 ```
 
 ###2. Usage
