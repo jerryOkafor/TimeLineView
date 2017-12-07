@@ -1,5 +1,5 @@
 # TimeLineView 
-Android Timeline View Library demostratgin the the power of ConstraintnLayout and RecyclerView.
+Android Timeline View Library demonstrate the the power of ConstraintnLayout and RecyclerView.
 
 
 
@@ -8,15 +8,18 @@ Android Timeline View Library demostratgin the the power of ConstraintnLayout an
  
 
 ##Showcase
+
+
 <img src="sc/sc1.png" alt="ExampleMain" width="240">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="sc/sc2.png" alt="ExampleMain" width="240">
+
 
 ##Quick Setup
 ### 1. Include library
 
 **Using Gradle**
 
-Timelineview is currently available in on Gitpack so add the following line before every other thing if you have not done that already.
+Timelineview is currently available in on Jitpack so add the following line before every other thing if you have not done that already.
 
 ```gradle
 allprojects {
@@ -27,7 +30,7 @@ allprojects {
 	}
 ```
 	
-Then add the followinf line 
+Then add the following line 
 
 ``` gradle
 dependencies {
@@ -56,18 +59,6 @@ Then add the dependency
 	    <version>1.0.0</version>
 	</dependency>
 ```
-
-
-#### Manual:
-**Manual - Using [Android Studio](https://developer.android.com/sdk/installing/studio.html):**
- * Download the library folder and import to your root application folder.
-You can manually achieve this step with 3 steps:
-
-1. Paste the folder library into your application at the same level of your app, build and gradle folder
-2. Add to your settings.gradle file the following code line: "include ':app', ':timelineview'"
-3. Rebuild the project
- * File → Project Structure → in Modules section click on "app" → Click on tab "Dependecies" → Click on the green plus → Module Dependecy → Select ":library"
- * Done
 
 ###2. Usage
 In your XML layout include the Timeline View as afollows:
@@ -100,22 +91,19 @@ class MyTimeLine(status: Status, var title: String?, var content: String?) : Tim
         if (if (title != null) title != that!!.title else that!!.title != null) return false
         return if (content != null) content == that.content else that.content == null
     }
-
-    override fun hashCode(): Int {
-        var result = if (title != null) title!!.hashCode() else 0
-        result = 31 * result + if (content != null) content!!.hashCode() else 0
-        return result
     }
-
-    override fun toString(): String {
-        return "MyTimeLine{" +
-                "title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                '}'
-    }
-}
 
 ```
+  
+  
+Timeline has three Statuses:
+
+- Status.COMPLETED
+- Status.UN_COMPLETED
+- Status.ATTENTION
+
+You can choose from any of the  statuses depending on the status of the itme you want to represent.
+
 **Create an Array of your Timelines**
 
 ```kotlin
@@ -150,7 +138,26 @@ val adapter = IndicatorAdapter(timeLines, this, object : TimeLineViewCallback<My
         adapter.swapItems(timeLines)
 
 ```
+**IndicatorAdapter**
+This extends RecyclerView.Adapter and exposes the following functions:
 
+- Swaps the old items with the new items
+
+	```kotlin
+	fun swapItems(timeLines: List<T>)
+	```
+- Update a single item given teh index
+
+	```kotlin
+	fun updatItem(timeline: T, position: Int) 
+	```
+- Adds a list of items to the list
+	
+	```kotlin
+	fun addItems(vararg items: T)
+	```
+	
+	
 ## Changelog
 
 See the [changelog](/CHANGELOG.md) file.

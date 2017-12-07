@@ -15,13 +15,7 @@ import me.jerryhanks.stepview.interfaces.TimeLineViewCallback
 import me.jerryhanks.stepview.model.Status
 import me.jerryhanks.stepview.model.TimeLine
 
-class IndicatorAdapter<in T : TimeLine>(timeLines: List<T>, private val context: Context, private val _callback: TimeLineViewCallback<T>?) : RecyclerView.Adapter<IndicatorHolder>() {
-
-    private var timeLines: List<T> = ArrayList()
-
-    init {
-        this.timeLines = timeLines
-    }
+class IndicatorAdapter<in T : TimeLine>(private val timeLines: MutableList<T>, private val context: Context, private val _callback: TimeLineViewCallback<T>?) : RecyclerView.Adapter<IndicatorHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IndicatorHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.timeline_indicator, parent, false)
@@ -76,8 +70,37 @@ class IndicatorAdapter<in T : TimeLine>(timeLines: List<T>, private val context:
         return this.timeLines.size
     }
 
+    /**
+     * Swaps the old items with the new one
+     *
+     * @param timeLines The List of the new items that we want to swap
+     * */
     fun swapItems(timeLines: List<T>) {
-        this.timeLines = timeLines
+        this.timeLines.clear()
+        this.timeLines.addAll(timeLines)
+        notifyDataSetChanged()
+    }
+
+    /**
+     * Replaces the item at the given position with the
+     * given item
+     *
+     * @param timeline The item to be replaces
+     * @param position The index of the item to be replaced
+     * */
+    fun updatItem(timeline: T, position: Int) {
+        this.timeLines[position] = timeline
+        notifyItemChanged(position)
+    }
+
+
+    /**
+     * Adds all the given item to the list
+     *
+     * @param items List of items to be added
+     * */
+    fun addItems(vararg items: T) {
+        this.timeLines.addAll(items)
         notifyDataSetChanged()
     }
 }
