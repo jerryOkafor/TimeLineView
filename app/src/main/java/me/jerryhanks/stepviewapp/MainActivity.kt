@@ -6,9 +6,9 @@ import android.view.View
 import android.widget.FrameLayout
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
-import me.jerryhanks.stepview.IndicatorAdapter
-import me.jerryhanks.stepview.interfaces.TimeLineViewCallback
-import me.jerryhanks.stepview.model.Status
+import me.jerryhanks.timelineview.IndicatorAdapter
+import me.jerryhanks.timelineview.interfaces.TimeLineViewCallback
+import me.jerryhanks.timelineview.model.Status
 
 class MainActivity : AppCompatActivity() {
 

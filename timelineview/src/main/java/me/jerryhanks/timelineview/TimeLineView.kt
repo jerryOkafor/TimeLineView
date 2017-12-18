@@ -1,4 +1,4 @@
-package me.jerryhanks.stepview
+package me.jerryhanks.timelineview
 
 import android.content.Context
 import android.support.v7.widget.LinearLayoutManager

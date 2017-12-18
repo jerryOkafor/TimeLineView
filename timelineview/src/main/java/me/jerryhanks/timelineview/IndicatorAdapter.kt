@@ -1,4 +1,4 @@
-package me.jerryhanks.stepview
+package me.jerryhanks.timelineview
 
 import android.content.Context
 import android.support.v4.content.ContextCompat
@@ -9,11 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 
-import java.util.ArrayList
-
-import me.jerryhanks.stepview.interfaces.TimeLineViewCallback
-import me.jerryhanks.stepview.model.Status
-import me.jerryhanks.stepview.model.TimeLine
+import me.jerryhanks.timelineview.interfaces.TimeLineViewCallback
+import me.jerryhanks.timelineview.model.Status
+import me.jerryhanks.timelineview.model.TimeLine
 
 class IndicatorAdapter<in T : TimeLine>(private val timeLines: MutableList<T>, private val context: Context, private val _callback: TimeLineViewCallback<T>?) : RecyclerView.Adapter<IndicatorHolder>() {
 

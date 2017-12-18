@@ -36,8 +36,10 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
 
     testCompile 'junit:junit:4.12'
-    compile project(':timelineview')
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    compile project(':timelineview')
+//    compile 'com.github.po10cio:TimeLineView:1.0.0'
 }
 repositories {
     mavenCentral()

@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/delivery_status" />
 
-    <me.jerryhanks.stepview.TimeLineView
+    <me.jerryhanks.timelineview.TimeLineView
         android:id="@+id/timelineView"
         android:layout_width="0dp"
         android:layout_height="0dp"

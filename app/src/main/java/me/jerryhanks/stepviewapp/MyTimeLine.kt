@@ -1,7 +1,7 @@
 package me.jerryhanks.stepviewapp
 
-import me.jerryhanks.stepview.model.Status
-import me.jerryhanks.stepview.model.TimeLine
+import me.jerryhanks.timelineview.model.Status
+import me.jerryhanks.timelineview.model.TimeLine
 
 /**
  * @author <@Po10cio> on 10/18/17 for StepViewApp

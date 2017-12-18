@@ -1,4 +1,4 @@
-package me.jerryhanks.stepview
+package me.jerryhanks.timelineview
 
 import org.junit.Test
 
