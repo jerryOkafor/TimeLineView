@@ -1,4 +1,4 @@
-package me.jerryhanks.stepviewapp
+package me.jerryhanks.demo
 
 import org.junit.Test
 

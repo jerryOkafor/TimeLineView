@@ -1,4 +1,4 @@
-package me.jerryhanks.stepviewapp
+package me.jerryhanks.demo
 
 import me.jerryhanks.timelineview.model.Status
 import me.jerryhanks.timelineview.model.TimeLine

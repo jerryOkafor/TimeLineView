@@ -7,7 +7,7 @@ android {
     compileSdkVersion 27
     buildToolsVersion "26.0.2"
     defaultConfig {
-        applicationId "me.jerryhanks.stepviewapp"
+        applicationId "me.jerryhanks.demo"
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 1
