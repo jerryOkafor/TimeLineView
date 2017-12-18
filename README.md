@@ -35,7 +35,7 @@ Then add the following line
 
 ``` gradle
 dependencies {
-  compile 'com.github.po10cio:TimeLineView:1.0.0'
+  compile 'com.github.po10cio:TimeLineView:1.0.1'
 }
 ```
 
@@ -57,7 +57,7 @@ Then add the dependency
 <dependency>
   <groupId>com.github.po10cio</groupId>
   <artifactId>TimeLineView</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 
