@@ -42,6 +42,21 @@ class TimeLineView : RelativeLayout {
         recyclerView.adapter = adapter
     }
 
+    fun scrollToTop(){
+        try {
+            recyclerView.scrollToPosition(0)
+        } catch (e: Exception) {
+            throw Throwable("No items")
+        }
+    }
+
+    fun scrollToBottom(){
+        try {
+            recyclerView.scrollToPosition(recyclerView.adapter.itemCount-1)
+        } catch (e: Exception) {
+            throw Throwable("No items")
+        }
+    }
 }
 
 

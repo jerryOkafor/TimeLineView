@@ -22,6 +22,21 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/delivery_status" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:onClick="addTopOne"
+        android:text="addTopOne"/>
+
+    <Button
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:onClick="addBottomOne"
+        android:text="addBottomOne"/>
+
     <me.jerryhanks.timelineview.TimeLineView
         android:id="@+id/timelineView"
         android:layout_width="0dp"

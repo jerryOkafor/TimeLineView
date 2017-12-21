@@ -54,6 +54,11 @@
     <string name="s_title_5">STEP 5</string>
     <string name="s_title_6">STEP 6</string>
     <string name="s_title_7">STEP 7</string>
+    <string name="s_title_8">STEP 8</string>
+    <string name="s_title_9">STEP 9</string>
+    <string name="s_title_10">STEP 10</string>
+    <string name="s_title_11">STEP 11</string>
+    <string name="s_title_12">STEP 12</string>
 
     <string name="s_content_1">Orientation\nPrio to the beginning of the year.</string>
     <string name="s_content_2">Self-Assessment Goal setting\nPrio to the Goal Setting Conference</string>
@@ -62,6 +67,13 @@
     <string name="s_content_5">Mid-Year conference\nPrio to the end of the school year.</string>
     <string name="s_content_6">Identify and collect Artifacts and Evidence\nAt or new the end of the school year</string>
     <string name="s_content_7">End of the Year conference and Settings\nEnd of the School Year once all performance has been received and analysed</string>
+    <string name="s_content_8">CONTENT 8 New</string>
+    <string name="s_content_9">CONTENT 9 New</string>
+    <string name="s_content_10">CONTENT 9 New</string>
+    <string name="s_content_11">CONTENT 11 New</string>
+    <string name="s_content_12">CONTENT 12 New</string>
+
+
     <string name="timeline_of_world_war_i">Timeline of World War I</string>
     <string name="delivery_status">Steps!!</string>
 

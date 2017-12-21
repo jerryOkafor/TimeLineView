@@ -39,17 +39,17 @@ class IndicatorAdapter<in T : TimeLine>(private val timeLines: MutableList<T>, p
                 holder.bottomLineIndicator.background = ContextCompat.getDrawable(context, R.drawable.box_disabled)
             }
         }
-        if (position == 0) {
-            holder.topLineIndicator.visibility = View.INVISIBLE
-        }
-        if (position == itemCount - 1) {
-            holder.bottomLineIndicator.visibility = View.INVISIBLE
-        }
+
+        holder.topLineIndicator.visibility = if(position==0) View.INVISIBLE else View.VISIBLE
+        holder.bottomLineIndicator.visibility = if(position == itemCount - 1) View.INVISIBLE else View.VISIBLE
 
         if (_callback != null) {
             val child = _callback.onBindView(timeLine, holder.container, position)
             val params = FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             child.layoutParams = params
+            if(holder.container.childCount>0){
+                holder.container.removeAllViews()
+            }
             holder.container.addView(child)
             params.gravity = Gravity.CENTER_VERTICAL or Gravity.START
             return
@@ -58,6 +58,9 @@ class IndicatorAdapter<in T : TimeLine>(private val timeLines: MutableList<T>, p
         val params = FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         val view = LayoutInflater.from(holder.itemView.context).inflate(R.layout.sample_time_line, holder.container, false)
         view.layoutParams = params
+        if(holder.container.childCount>0){
+            holder.container.removeAllViews()
+        }
         holder.container.addView(view)
         params.gravity = Gravity.CENTER_VERTICAL or Gravity.START
 
@@ -100,5 +103,18 @@ class IndicatorAdapter<in T : TimeLine>(private val timeLines: MutableList<T>, p
     fun addItems(vararg items: T) {
         this.timeLines.addAll(items)
         notifyDataSetChanged()
+    }
+
+
+    fun addTopItem(timeline: T){
+        this.timeLines.add(0,timeline)
+        notifyItemInserted(0)
+        notifyItemRangeChanged(0,2)
+    }
+
+    fun addBottomItem(timeline: T){
+        this.timeLines.add(timeline)
+        notifyItemInserted(this.timeLines.size-1)
+        notifyItemRangeChanged(this.timeLines.size-2,2)
     }
 }
