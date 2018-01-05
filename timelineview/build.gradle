@@ -1,6 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'com.github.dcendents.android-maven'
+//apply plugin: 'com.github.dcendents.android-maven'
+
+apply plugin: 'com.vanniktech.android.junit.jacoco'
 
 android {
     compileSdkVersion compiled_sdk_version
