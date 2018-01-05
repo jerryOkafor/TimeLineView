@@ -12,6 +12,8 @@ import me.jerryhanks.timelineview.model.Status
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var adapter:IndicatorAdapter<MyTimeLine>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -26,10 +28,16 @@ class MainActivity : AppCompatActivity() {
                     add(MyTimeLine(Status.COMPLETED, getString(R.string.s_title_6), getString(R.string.s_content_6)))
                     add(MyTimeLine(Status.COMPLETED, getString(R.string.s_title_7), getString(R.string.s_content_7)))
 
+                    // more data
+                    add(MyTimeLine(Status.COMPLETED, getString(R.string.s_title_8), getString(R.string.s_content_8)))
+                    add(MyTimeLine(Status.COMPLETED, getString(R.string.s_title_9), getString(R.string.s_content_9)))
+                    add(MyTimeLine(Status.COMPLETED, getString(R.string.s_title_10), getString(R.string.s_content_10)))
+                    add(MyTimeLine(Status.COMPLETED, getString(R.string.s_title_11), getString(R.string.s_content_11)))
+                    add(MyTimeLine(Status.COMPLETED, getString(R.string.s_title_12), getString(R.string.s_content_12)))
                 }
 
 
-        val adapter = IndicatorAdapter(mutableListOf(), this, object : TimeLineViewCallback<MyTimeLine> {
+        adapter = IndicatorAdapter(mutableListOf(), this, object : TimeLineViewCallback<MyTimeLine> {
             override fun onBindView(model: MyTimeLine, container: FrameLayout, position: Int): View {
                 val view = layoutInflater
                         .inflate(R.layout.sample_time_line,
@@ -48,5 +56,23 @@ class MainActivity : AppCompatActivity() {
 //        caption.text = getString(R.string.timeline_of_world_war_i)
         caption.text = getString(R.string.delivery_status)
 
+    }
+
+    /**
+     * add one item to the top
+     */
+    fun addTopOne(view: View) {
+        val timeLine = MyTimeLine(Status.ATTENTION, "New Top One", "heiheihei")
+        adapter.addTopItem(timeLine)
+        timelineView.scrollToTop()
+    }
+
+    /**
+     * add one item to the bottom
+     */
+    fun addBottomOne(view: View) {
+        val timeLine = MyTimeLine(Status.ATTENTION, "New Bottom One", "hahahaha")
+        adapter.addBottomItem(timeLine)
+        timelineView.scrollToBottom()
     }
 }
