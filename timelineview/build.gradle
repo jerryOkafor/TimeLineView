@@ -3,12 +3,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'com.github.dcendents.android-maven'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion "26.0.2"
+    compileSdkVersion compiled_sdk_version
+    buildToolsVersion build_tools_version
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 27
+        minSdkVersion min_sdk_version
+        targetSdkVersion target_sdk_version
         versionCode 1
         versionName "1.0"
 

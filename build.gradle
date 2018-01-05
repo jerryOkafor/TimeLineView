@@ -29,6 +29,11 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
+ext.compiled_sdk_version = 27
+ext.target_sdk_version = 27
+ext.min_sdk_version = 16
+ext.build_tools_version = "26.0.2"
+
 
 ext.support_version = '27.0.2'
-ext.constraint_layout_version = '1.1.0-beta3'
+ext.constraint_layout_version = '1.1.0-beta4'
