@@ -60,11 +60,11 @@
     <string name="s_title_11">STEP 11</string>
     <string name="s_title_12">STEP 12</string>
 
-    <string name="s_content_1">Orientation\nPrio to the beginning of the year.</string>
+    <string name="s_content_1">Orientation\nPrior to the beginning of the year.</string>
     <string name="s_content_2">Self-Assessment Goal setting\nPrio to the Goal Setting Conference</string>
     <string name="s_content_3">Beginning of the year Conference\nBy The end of september</string>
     <string name="s_content_4">School Site Visits/Informal Assessment\nOngoing</string>
-    <string name="s_content_5">Mid-Year conference\nPrio to the end of the school year.</string>
+    <string name="s_content_5">Mid-Year conference\nPrior to the end of the school year.</string>
     <string name="s_content_6">Identify and collect Artifacts and Evidence\nAt or new the end of the school year</string>
     <string name="s_content_7">End of the Year conference and Settings\nEnd of the School Year once all performance has been received and analysed</string>
     <string name="s_content_8">CONTENT 8 New</string>
@@ -76,6 +76,8 @@
 
     <string name="timeline_of_world_war_i">Timeline of World War I</string>
     <string name="delivery_status">Steps!!</string>
+    <string name="add_to_top">Add to Top</string>
+    <string name="add_to_bottom">Add to Bottom</string>
 
 
     <!--<string name="s_title_1">1958</string>-->

@@ -37,7 +37,7 @@ Then add the following line
 
 ``` gradle
 dependencies {
-  compile 'com.github.po10cio:TimeLineView:1.0.1'
+  compile 'com.github.po10cio:TimeLineView:1.0.2'
 }
 ```
 
@@ -59,7 +59,7 @@ Then add the dependency
 <dependency>
   <groupId>com.github.po10cio</groupId>
   <artifactId>TimeLineView</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
 </dependency>
 ```
 
@@ -167,14 +167,14 @@ This extends RecyclerView.Adapter and exposes the following functions:
   fun updateItem(timeline: T, position: Int) 
 ```
 
-- Adds a list of items to the list
+- Adds a list of items to the list starting from the given index
 ```kotlin
-  fun addItems(vararg items: T)
+  fun addItems(vararg items: T, index: Int = itemCount)
 ```
 	
 ## Changelog
 
-See the [changelog](/CHANGELOG.md) file.
+See the [changelog](CHANGELOG.md) file.
 
 
 ## License

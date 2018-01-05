@@ -3,6 +3,7 @@ package me.jerryhanks.timelineview
 import android.content.Context
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -40,28 +41,21 @@ class IndicatorAdapter<in T : TimeLine>(private val timeLines: MutableList<T>, p
             }
         }
 
-        holder.topLineIndicator.visibility = if(position==0) View.INVISIBLE else View.VISIBLE
-        holder.bottomLineIndicator.visibility = if(position == itemCount - 1) View.INVISIBLE else View.VISIBLE
-
-        if (_callback != null) {
-            val child = _callback.onBindView(timeLine, holder.container, position)
-            val params = FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-            child.layoutParams = params
-            if(holder.container.childCount>0){
-                holder.container.removeAllViews()
-            }
-            holder.container.addView(child)
-            params.gravity = Gravity.CENTER_VERTICAL or Gravity.START
-            return
-        }
+        holder.topLineIndicator.visibility = if (position == 0) View.INVISIBLE else View.VISIBLE
+        holder.bottomLineIndicator.visibility = if (position == itemCount - 1) View.INVISIBLE else View.VISIBLE
 
         val params = FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        val view = LayoutInflater.from(holder.itemView.context).inflate(R.layout.sample_time_line, holder.container, false)
-        view.layoutParams = params
-        if(holder.container.childCount>0){
+        val child = _callback?.onBindView(timeLine, holder.container, position) ?:
+                LayoutInflater.from(holder.itemView.context).inflate(R.layout.sample_time_line, holder.container, false)
+        child.layoutParams = params
+
+        //clean the container
+        if (holder.container.childCount > 0) {
             holder.container.removeAllViews()
         }
-        holder.container.addView(view)
+
+        //start adding new views
+        holder.container.addView(child)
         params.gravity = Gravity.CENTER_VERTICAL or Gravity.START
 
 
@@ -76,7 +70,7 @@ class IndicatorAdapter<in T : TimeLine>(private val timeLines: MutableList<T>, p
      *
      * @param timeLines The List of the new items that we want to swap
      * */
-    private fun swapItems(timeLines: List<T>) {
+    fun swapItems(timeLines: List<T>) {
         this.timeLines.clear()
         this.timeLines.addAll(timeLines)
         notifyDataSetChanged()
@@ -99,27 +93,27 @@ class IndicatorAdapter<in T : TimeLine>(private val timeLines: MutableList<T>, p
      * Adds all the given item to the list
      *
      * @param items List of items to be added
+     * @param index Index of the list to start the addition
      * */
     @JvmOverloads
-    fun addItems(vararg items: T, index: Int = itemCount - 1) {
+    fun addItems(vararg items: T, index: Int = itemCount) {
+        //if the index is less than the total item count
+        //then we are adding to the top of the list
+        val isTop = index < this.itemCount
+
         if (index < 0) {
             swapItems(items.toList())
             return
         }
         this.timeLines.addAll(index, items.toList())
-        notifyItemRangeInserted(index,items.size)
-    }
+        notifyItemRangeInserted(index, items.size)
+        if (isTop) {
+            notifyItemRangeChanged(index, items.size + 1)
+        } else {
+            notifyItemRangeChanged(index - 1, items.size)
+        }
 
 
-    fun addTopItem(timeline: T){
-        this.timeLines.add(0,timeline)
-        notifyItemInserted(0)
-        notifyItemRangeChanged(0,2)
     }
 
-    fun addBottomItem(timeline: T){
-        this.timeLines.add(timeline)
-        notifyItemInserted(this.timeLines.size-1)
-        notifyItemRangeChanged(this.timeLines.size-2,2)
-    }
 }

@@ -12,7 +12,7 @@ import me.jerryhanks.timelineview.model.Status
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var adapter:IndicatorAdapter<MyTimeLine>
+    private lateinit var adapter: IndicatorAdapter<MyTimeLine>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,23 +56,27 @@ class MainActivity : AppCompatActivity() {
 //        caption.text = getString(R.string.timeline_of_world_war_i)
         caption.text = getString(R.string.delivery_status)
 
+        //set add buttons onclick lsisteners
+        btnAddToTop.setOnClickListener({ addToTop() })
+        btnAddToBottom.setOnClickListener({ addToBottom() })
+
     }
 
     /**
-     * add one item to the top
+     * Adds an item to the top of the list and scroll to the top
      */
-    fun addTopOne(view: View) {
+    fun addToTop() {
         val timeLine = MyTimeLine(Status.ATTENTION, "New Top One", "heiheihei")
-        adapter.addTopItem(timeLine)
+        adapter.addItems(timeLine, index = 2)
         timelineView.scrollToTop()
     }
 
     /**
-     * add one item to the bottom
+     * Add an item to the bottom of the list and scroll to the bottom
      */
-    fun addBottomOne(view: View) {
+    fun addToBottom() {
         val timeLine = MyTimeLine(Status.ATTENTION, "New Bottom One", "hahahaha")
-        adapter.addBottomItem(timeLine)
+        adapter.addItems(timeLine)
         timelineView.scrollToBottom()
     }
 }

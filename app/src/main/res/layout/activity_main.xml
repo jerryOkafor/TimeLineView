@@ -23,19 +23,21 @@
         tools:text="@string/delivery_status" />
 
     <Button
+        android:id="@+id/btnAddToTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:onClick="addTopOne"
-        android:text="addTopOne"/>
+        android:onClick="addToTop"
+        android:text="@string/add_to_top"
+        android:textAllCaps="false" />
 
     <Button
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/btnAddToBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="addToBottom"
+        android:text="@string/add_to_bottom"
         android:textAllCaps="false"
-        android:onClick="addBottomOne"
-        android:text="addBottomOne"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <me.jerryhanks.timelineview.TimeLineView
         android:id="@+id/timelineView"
