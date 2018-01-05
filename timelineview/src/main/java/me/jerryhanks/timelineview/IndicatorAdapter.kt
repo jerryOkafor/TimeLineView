@@ -73,7 +73,7 @@ class IndicatorAdapter<in T : TimeLine>(private val timeLines: MutableList<T>, p
      *
      * @param timeLines The List of the new items that we want to swap
      * */
-    fun swapItems(timeLines: List<T>) {
+    private fun swapItems(timeLines: List<T>) {
         this.timeLines.clear()
         this.timeLines.addAll(timeLines)
         notifyDataSetChanged()
@@ -86,7 +86,7 @@ class IndicatorAdapter<in T : TimeLine>(private val timeLines: MutableList<T>, p
      * @param timeline The item to be replaces
      * @param position The index of the item to be replaced
      * */
-    fun updatItem(timeline: T, position: Int) {
+    private fun updateItem(timeline: T, position: Int) {
         this.timeLines[position] = timeline
         notifyItemChanged(position)
     }
@@ -97,8 +97,13 @@ class IndicatorAdapter<in T : TimeLine>(private val timeLines: MutableList<T>, p
      *
      * @param items List of items to be added
      * */
-    fun addItems(vararg items: T) {
-        this.timeLines.addAll(items)
-        notifyDataSetChanged()
+    @JvmOverloads
+    fun addItems(vararg items: T, index: Int = itemCount - 1) {
+        if (index < 0) {
+            swapItems(items.toList())
+            return
+        }
+        this.timeLines.addAll(index, items.toList())
+        notifyItemRangeInserted(index,items.size)
     }
 }
