@@ -2,7 +2,7 @@
 Android Timeline View Library demonstrate the the power of ConstraintnLayout and RecyclerView.
 
 
-
+[![Build Status](https://travis-ci.org/po10cio/TimeLineView.svg?branch=master)](https://travis-ci.org/po10cio/TimeLineView)
 [![](https://jitpack.io/v/po10cio/TimeLineView.svg)](https://jitpack.io/#po10cio/TimeLineView)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ebb565a9b57641dfac51be3b6139ba9a)](https://www.codacy.com/app/po10cio/TimeLineView?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=po10cio/TimeLineView&amp;utm_campaign=Badge_Grade)
 [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-TimeLineView-green.svg?style=flat )]( https://android-arsenal.com/details/1/6540 )
