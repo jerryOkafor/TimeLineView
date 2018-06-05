@@ -45,7 +45,7 @@ dependencies {
 
 Also add the following lines before adding the maven dependency
 
-```maven
+```xml
 <repositories>
   <repository>
     <id>jitpack.io</id>
@@ -55,7 +55,7 @@ Also add the following lines before adding the maven dependency
 ```
 Then add the dependency
 
-``` maven
+```xml
 <dependency>
   <groupId>com.github.po10cio</groupId>
   <artifactId>TimeLineView</artifactId>
@@ -122,7 +122,7 @@ You can choose from any of the statuses depending on the status of the item you 
 **Create an Array of your TimeLine**
 
 ```kotlin
- val timeLines = mutableListOf<MyTimeLine>()
+val timeLines = mutableListOf<MyTimeLine>()
   .apply {
     add(MyTimeLine(Status.COMPLETED, getString(R.string.s_title_1), getString(R.string.s_content_1)))
     add(MyTimeLine(Status.COMPLETED, getString(R.string.s_title_2), getString(R.string.s_content_2)))
@@ -137,21 +137,21 @@ You can choose from any of the statuses depending on the status of the item you 
 **Create the IndicatorAdapter and add it to the TimeLineView**
 
 ```kotlin
-  val adapter = IndicatorAdapter(mutableListOf(), this, object : TimeLineViewCallback<MyTimeLine> {
-    override fun onBindView(model: MyTimeLine, container: FrameLayout, position: Int): View {
-      val view = layoutInflater
-        .inflate(R.layout.sample_time_line,
-        container, false)
-       
-      (view.findViewById<TextView>(R.id.tv_title)).text = model.title
-      (view.findViewById<TextView>(R.id.tv_content)).text = model.content
-     
-      return view
-    }
-  })
+val adapter = IndicatorAdapter(mutableListOf(), this, object : TimeLineViewCallback<MyTimeLine> {
+  override fun onBindView(model: MyTimeLine, container: FrameLayout, position: Int): View {
+    val view = layoutInflater
+      .inflate(R.layout.sample_time_line,
+      container, false)
+      
+    (view.findViewById<TextView>(R.id.tv_title)).text = model.title
+    (view.findViewById<TextView>(R.id.tv_content)).text = model.content
+   
+    return view
+  }
+})
 
-  timelineView.setIndicatorAdapter(adapter)
-  adapter.swapItems(timeLines)
+timelineView.setIndicatorAdapter(adapter)
+adapter.swapItems(timeLines)
 ```
 
 **IndicatorAdapter**
@@ -159,17 +159,17 @@ This extends RecyclerView.Adapter and exposes the following functions:
 
 - Swaps the old items with the new items
 ```kotlin
-  fun swapItems(timeLines: List<T>)
+fun swapItems(timeLines: List<T>)
 ```
 
 - Update a single item given the index
 ```kotlin
-  fun updateItem(timeline: T, position: Int) 
+fun updateItem(timeline: T, position: Int) 
 ```
 
 - Adds a list of items to the list starting from the given index
 ```kotlin
-  fun addItems(vararg items: T, index: Int = itemCount)
+fun addItems(vararg items: T, index: Int = itemCount)
 ```
 	
 ## Changelog
